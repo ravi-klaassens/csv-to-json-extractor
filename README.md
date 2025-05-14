@@ -1,7 +1,6 @@
 # CSV to JSON Extractor
 
 <div align="center">
-  <img src="public/csv-to-json-logo.png" alt="CSV to JSON Extractor Logo" width="200"/>
   <p><strong>Convert CSV files with JSON data into individual JSON files</strong></p>
 </div>
 
@@ -22,12 +21,6 @@ The app will automatically extract the JSON, validate it, and create a zip file 
 - **Error Handling**: Detailed feedback when issues occur during processing
 - **Responsive UI**: Works on desktop and mobile devices
 - **Dark Mode Support**: Adapts to your system preferences
-
-## 📸 Screenshots
-
-<div align="center">
-  <img src="public/screenshot.png" alt="CSV to JSON Extractor Screenshot" width="800"/>
-</div>
 
 ## 🚀 Getting Started
 
