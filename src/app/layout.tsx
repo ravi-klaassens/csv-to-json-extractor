@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: 'CSV to JSON Extractor',
   description: 'Transform CSV files with JSON data into individual JSON files named by their slugs',
   icons: {
-    icon: '/favicon.ico',
+    icon: '/csv-to-json-logo.svg',
   },
 };
 
@@ -25,6 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="/csv-to-json-logo.svg" type="image/svg+xml" />
       </head>
       <body className={`min-h-screen bg-white ${inter.className}`}>
         <main className="w-full h-full">
