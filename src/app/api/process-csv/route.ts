@@ -69,17 +69,17 @@ export async function POST(request: NextRequest) {
       // If we have both slug and JSON, add to the zip
       if (slug && jsonContent) {
         try {
-          // Try to parse and re-stringify the JSON to ensure it's valid
-          // This will throw if invalid
-          const parsedJson = JSON.parse(jsonContent.replace(/""/g, '"'));
-          const formattedJson = JSON.stringify(parsedJson, null, 2);
+          // Just validate JSON is valid but DO NOT re-stringify it
+          // This helps catch syntax errors but preserves exact content
+          JSON.parse(jsonContent.replace(/""/g, '"'));
           
-          zip.file(`${slug}.json`, formattedJson);
+          // Store the original JSON content without modification
+          zip.file(`${slug}.json`, jsonContent);
           processedCount++;
         } catch (error) {
-          console.error(`Error parsing JSON for ${slug}:`, error);
+          console.error(`Error validating JSON for ${slug}:`, error);
           
-          // If parsing fails, try to save the raw content
+          // If validation fails, still try to save the raw content
           if (jsonContent.startsWith('{') && jsonContent.endsWith('}')) {
             zip.file(`${slug}.json`, jsonContent);
             processedCount++;
